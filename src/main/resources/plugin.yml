@@ -1,0 +1,10 @@
+name: first-paper-plugin
+description: $description
+version: '${version}'
+
+main: io.github.thomaslbpinto.firstPaperPlugin.FirstPaperPlugin
+api-version: '26.3'
+load: POSTWORLD
+
+authors: [ Thomas Pinto ]
+website: https://github.com/thomaslbpinto
