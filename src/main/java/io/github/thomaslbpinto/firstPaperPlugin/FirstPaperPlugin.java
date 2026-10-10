@@ -1,8 +1,6 @@
 package io.github.thomaslbpinto.firstPaperPlugin;
 
-import io.github.thomaslbpinto.firstPaperPlugin.commands.HealCommand;
-import io.github.thomaslbpinto.firstPaperPlugin.commands.PotatoCommand;
-import io.github.thomaslbpinto.firstPaperPlugin.commands.SpawnerCommand;
+import io.github.thomaslbpinto.firstPaperPlugin.commands.*;
 import io.github.thomaslbpinto.firstPaperPlugin.listeners.ConnectionListener;
 import io.github.thomaslbpinto.firstPaperPlugin.listeners.EatingListener;
 import io.github.thomaslbpinto.firstPaperPlugin.listeners.PotatoListener;
@@ -40,6 +38,9 @@ public final class FirstPaperPlugin extends JavaPlugin {
 
     getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, event -> {
       event.registrar().register(SpawnerCommand.execute());
+      event.registrar().register(DiamondCommand.execute());
+      event.registrar().register(GlowCommand.execute());
+      event.registrar().register(BroadcastCommand.execute());
     });
   }
 
