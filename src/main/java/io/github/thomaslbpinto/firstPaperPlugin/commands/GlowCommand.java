@@ -7,6 +7,7 @@ import io.papermc.paper.command.brigadier.Commands;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
@@ -55,7 +56,7 @@ public class GlowCommand {
     setPlayerGlowColor(player, textColor);
 
     player.setGlowing(true);
-
+    player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ALLAY_ITEM_THROWN, 1, 1);
     player.sendMessage(
         Component.text("You are now glowing in ", NamedTextColor.GRAY)
             .append(Component.text(colorName, textColor))
@@ -87,9 +88,9 @@ public class GlowCommand {
       return 0;
     }
 
-    player.setGlowing(false);
     removeFromGlowTeams(player);
-
+    player.setGlowing(false);
+    player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ALLAY_ITEM_THROWN, 1, 0.5F);
     player.sendMessage(Component.text("You are not glowing anymore.", NamedTextColor.GREEN));
     return 1;
   }
