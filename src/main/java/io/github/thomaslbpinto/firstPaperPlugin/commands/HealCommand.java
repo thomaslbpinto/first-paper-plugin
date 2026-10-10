@@ -22,6 +22,7 @@ public class HealCommand implements BasicCommand {
     player.setSaturation(20);
     player.setFoodLevel(20);
     player.setFireTicks(0);
+    player.clearActivePotionEffects();
     player.sendMessage(Component.text("You have been healed.", NamedTextColor.GREEN));
   }
 }
